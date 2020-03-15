@@ -1,0 +1,28 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server --port=9000",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylin-z/sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylin-z/sandbox/issues"
+  },
+  "homepage": "https://github.com/kylin-z/sandbox#readme",
+  "dependencies": {
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-sources": "^1.4.3"
+  }
+}
