@@ -12,6 +12,5 @@ module.exports = {
     library: `sub-[name]`
   },
   plugins: [
-    new ModuleWrapperPlugin()
   ]
 };

@@ -8,45 +8,6 @@
 </head>
 
 <body>
-  <script>
-    var isAReady = false, isBReady = false;
-    window.xxx = 'master';
-
-    function moduleWrapper(name, cb) {
-
-      // 造一个容器
-      var container = document.createElement('div');
-      container.id = `container-${name}`;
-      document.body.appendChild(container);
-
-      // 造一个iframe
-      var iframe = document.createElement('iframe');
-      iframe.id = `iframe-${name}`;
-      iframe.hidden = true;
-      iframe.src = "./iframe.html";
-      document.body.appendChild(iframe);
-      // onload 获取window
-      iframe.onload = function () {
-
-        var _window = iframe.contentWindow;
-
-        cb(undefined, undefined, undefined, {
-          window: new Proxy(_window, {}),
-          location, document: new Proxy(document, {
-            get(target, key) {
-              if (key == 'body') {
-                return container;
-              }
-              return target[key]
-            }
-          })
-        });
-        
-        // 懒得处理直接在这跑 module.exports
-        _window[`sub-${name}`]();
-      }
-    }
-  </script>
   <script src="./dist/a.js"></script>
   <script src="./dist/b.js"></script>
 </body>
